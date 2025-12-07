@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ProcessRepositoryCreateJob;
 use App\Models\Repository;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,11 @@ class RepositoryController extends Controller
     public function index()
     {
         return response()->json(Repository::all());
+    }
+
+    public function createRepository()
+    {
+        ProcessRepositoryCreateJob::dispatch();
     }
 
     /**

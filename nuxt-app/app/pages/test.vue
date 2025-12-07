@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const { data: repositories, pending, error } = await useFetch("http://localhost:8000/api/repository");
+
+async function onClick() {
+  const { pending, error } = await useFetch("http://localhost:8000/api/repository", { method: 'POST'})
+}
 </script>
 
 <template>
@@ -16,5 +20,7 @@ const { data: repositories, pending, error } = await useFetch("http://localhost:
     </ul>
 
     <h1 v-else>No repositories found</h1>
+
+    <UButton label="Create Repository" @click="onClick"></UButton>
   </div>
 </template>
