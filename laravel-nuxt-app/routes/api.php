@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\RepositoryController;
 
-Route::get('/user', function (Request $request) {
-    return "OK";
-});
+Route::get('/repository', [RepositoryController::class, 'index']);

@@ -20,6 +20,7 @@ export default withNuxt({
     "@stylistic/space-before-function-paren": "off",
     "space-in-parens": "off",
     "@stylistic/space-in-parens": "off",
+    "@stylistic/semi": "off",
   },
 });
 // Your custom configs here
